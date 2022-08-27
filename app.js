@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
 const displayStart = () => {
   let start = `
     
-    <div class="starting">
+    <div class="starting starting-effect">
     <img src="logo.fw.png">
     <p class="question">Are you ready to play tictactoc? if you are ready let's get started
     </p>
