@@ -397,7 +397,9 @@ const allGame = () => {
   // console.log(replay);
   document.querySelector(".rep").addEventListener("click", function () {
     document.querySelector(".rep").style.display = "none";
-    displayStart();
+    setTimeout(() => {
+      displayStart();
+    }, 1000);
   });
 };
 
