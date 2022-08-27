@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=DynaPuff&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=DynaPuff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Saira Condensed", sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
 }
+
 
 body {
     display: flex;
@@ -14,22 +15,16 @@ body {
     align-items: center;
     background-image: url(./bg3.jpg);
     overflow: hidden;
+
 }
 
 .all {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
 }
 
-.rep {
-    display: none;
-        padding: 0.5rem;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
 .starting {
     width: 300px;
     background-color: rgba(241, 242, 240, 0.5);
@@ -39,12 +34,13 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    color: #0b0b0b;
+    color: #0B0B0B;
     padding: 1.5rem;
     border-radius: 4px;
-    opacity: 0;
     transform: scale(0);
-    transition: opacity 500ms ease, transform 500ms ease;
+    opacity: 0;
+    transition: all 500ms ease;
+
 }
 
 .starting-effect {
@@ -63,10 +59,11 @@ body {
 }
 
 .start {
-    padding: 0.5rem;
+
+    padding: .5rem;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: .9rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -87,6 +84,7 @@ body {
     transform: translate(250px, 0px);
     opacity: 0;
     user-select: none;
+
 }
 
 .game-control-come {
@@ -114,7 +112,7 @@ body {
 }
 
 .players>div>input {
-    padding: 0.3rem;
+    padding: .3rem;
     border-radius: 4px;
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -131,7 +129,7 @@ body {
     cursor: pointer;
 
     border-radius: 4px;
-    padding: 0.1rem 0.8rem;
+    padding: .1rem .8rem;
 }
 
 .choose>span:hover {
@@ -145,7 +143,7 @@ body {
 }
 
 .or {
-    font-size: 0.8rem;
+    font-size: .8rem;
     font-weight: bold;
 }
 
@@ -159,7 +157,7 @@ body {
 
 .timeScore input {
     width: 70px;
-    padding: 0.3rem;
+    padding: .3rem;
     border-radius: 4px;
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -171,17 +169,22 @@ body {
 
 .play {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0.2rem 1rem;
+    padding: .2rem 1rem;
     cursor: pointer;
     border-radius: 4px;
     font-size: 1.1rem;
+
 }
+
+
 
 .error {
     font-weight: bold;
     height: 40px;
-    padding: 0.5rem;
+    padding: .5rem;
 }
+
+
 
 .playGame {
     transform: scale(0);
@@ -213,10 +216,11 @@ body {
     backdrop-filter: blur(6px);
     border-radius: 4px;
     font-size: 20px;
-    padding: 0.8rem;
+    padding: .8rem;
     color: #fff;
     text-align: center;
 }
+
 
 .game-container {
     width: 450px;
@@ -226,14 +230,15 @@ body {
     background-color: rgba(241, 242, 240, 0.5);
     backdrop-filter: blur(6px);
     border-radius: 8px;
-    transition: all 0.5s ease;
-    /* pointer-events: none; */
+    transition: all .5s ease;
+
 }
 
 .gameEnd {
     height: 0px;
     overflow: hidden;
 }
+
 
 .square {
     width: 150px;
@@ -244,17 +249,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #064f56;
+    color: #064F56;
 
     cursor: pointer;
-    /* user-select: none; */
-    /* pointer-events: none; */
+
     /* color: #AC1E76; */
 }
-
-/* .square:hover {
-  background-color: rgba(61, 61, 61, 0.35);
-} */
 
 .square:nth-child(1) {
     border-top-right-radius: 0px;
@@ -306,10 +306,4 @@ body {
     border-top-right-radius: 0px;
     border-right: 0px;
     border-bottom: 0px;
-}
-
-
-
-.hide {
-    display: none;
 }
