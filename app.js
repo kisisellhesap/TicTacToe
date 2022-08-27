@@ -1,6 +1,3 @@
-
-
-
 const square = document.querySelectorAll(".all .square");
 let turn;
 let player1Score;
@@ -19,7 +16,7 @@ window.addEventListener("load", () => {
 const displayStart = () => {
   let start = `
     
-    <div class="starting starting-effect">
+    <div class="starting">
     <img src="logo.fw.png">
     <p class="question">Are you ready to play tictactoc? if you are ready let's get started
     </p>
@@ -280,13 +277,13 @@ const scoreTable = (playerOneName, playerTwoName, ScoreLimit) => {
     document.querySelector(".players").textContent == `${playerOneName}'s turn`
   ) {
     document.querySelector(".players").textContent = `${playerTwoName} win`;
-    console.log(document.querySelector(".p2-score").textContent);
+    // console.log(document.querySelector(".p2-score").textContent);
     document.querySelector(".p2-score").textContent++;
   } else {
     document.querySelector(".players").textContent = `${playerOneName} win`;
     document.querySelector(".p1-score").textContent++;
   }
-  console.log(document.querySelector(".scoreTable"));
+  // console.log(document.querySelector(".scoreTable"));
   checkScore(
     playerOneName,
     playerTwoName,
@@ -314,7 +311,7 @@ const checkScore = (
     }, 2500);
     document.querySelector(".game-container").classList.add("gameEnd");
     replay = false;
-    // console.log(all);
+    console.log(all);
 
     // burada
   } else if (p2score == ScoreLimit) {
