@@ -395,6 +395,7 @@ const againGame = (playerOneName, playerTwoName) => {
 const allGame = () => {
   displayStart();
   // console.log(replay);
+
   document.querySelector(".rep").addEventListener("click", function () {
     document.querySelector(".rep").style.display = "none";
     setTimeout(() => {
