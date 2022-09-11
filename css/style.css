@@ -28,15 +28,12 @@ body {
     cursor: pointer;
     border-radius: 4px;
     font-size: 0.9rem;
-    border: 1px solid rgba(0, 0, 0, 1);
-    background: #275c6a;
-    color: #fff;
-    width: 75%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .starting {
     width: 300px;
-    background-color: rgba(241, 242, 240, 1);
+    background-color: rgba(241, 242, 240, 0.5);
     backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
@@ -71,17 +68,14 @@ body {
     cursor: pointer;
     border-radius: 4px;
     font-size: 0.9rem;
-    border: 1px solid rgba(0, 0, 0, 1);
-    background: #275c6a;
-    color: #fff;
-    width: 75%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* ----------- */
 
 .game-control {
     width: 500px;
-    background-color: rgba(241, 242, 240, 1);
+    background-color: rgba(241, 242, 240, 0.5);
     backdrop-filter: blur(8px);
     padding: 1.5rem;
     display: flex;
@@ -124,7 +118,7 @@ body {
     padding: 0.3rem;
     border-radius: 4px;
     outline: none;
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .choose {
@@ -165,12 +159,11 @@ body {
 }
 
 .timeScore input {
-    min-width: 70px;
-    width: 50%;
+    width: 70px;
     padding: 0.3rem;
     border-radius: 4px;
     outline: none;
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .TopTimeScore {
@@ -178,14 +171,11 @@ body {
 }
 
 #play {
-    border: 1px solid rgba(0, 0, 0, 1);
-    background: #275c6a;
-    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0.2rem 1rem;
     cursor: pointer;
     border-radius: 4px;
     font-size: 1.1rem;
-    width: 75%;
 }
 
 .error {
@@ -215,16 +205,16 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-top: .5rem;
 }
 
 .score,
 .game-info>p {
-    background-color: rgba(241, 242, 240, 1);
+    background-color: rgba(241, 242, 240, 0.5);
     backdrop-filter: blur(6px);
     border-radius: 4px;
     font-size: 20px;
     padding: 0.8rem;
+    color: #fff;
     text-align: center;
 }
 
@@ -233,7 +223,7 @@ body {
     height: 450px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(241, 242, 240, 1);
+    background-color: rgba(241, 242, 240, 0.5);
     backdrop-filter: blur(6px);
     border-radius: 8px;
     transition: all 0.5s ease;
@@ -247,7 +237,8 @@ body {
 .square {
     width: 150px;
     height: 150px;
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     font-size: 70px;
     display: flex;
     align-items: center;
