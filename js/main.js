@@ -57,24 +57,27 @@
 		if(playersContent === `${playerOneName}'s turn`) playersEl.textContent = `${playerTwoName}'s turn`
 		else playersContent = `${playerOneName}'s turn`
 	}
-	const checkScore = (playerOneName, playerTwoName, p1score, p2score, ScoreLimit) => {
+	const checkScore = (playerOneName, playerTwoName, p1score, p2score, scoreLimit) => {
 		let playersEl = $$.querySelector(".players")
-		if(p1score == ScoreLimit) playersEl.textContent = `${playerOneName} win `
-		else if(p2score == ScoreLimit) playersEl.textContent = `${playerTwoName} win `
-		setTimeout(() => {
-			$$.querySelector("#playGame").remove()
-			$$.querySelector("#rep").style.display = "block"
-		}, 2500)
-		$$.querySelector(".game-container").classList.add("gameEnd")
-		replay = false
+		if(p1score === scoreLimit) playersEl.textContent = `${playerOneName} win `
+		else if(p2score === scoreLimit) playersEl.textContent = `${playerTwoName} win `
+		if([p1score, p2score].includes(scoreLimit)) {
+			setTimeout(() => {
+				$$.querySelector("#playGame").remove()
+				$$.querySelector("#rep").style.display = "block"
+			}, 2500)
+			$$.querySelector(".game-container").classList.add("gameEnd")
+			replay = false
+		}
 	}
 	const scoreTable = (playerOneName, playerTwoName, ScoreLimit) => {
-		let playersContent = $$.querySelector(".players").textContent
-		if(playersContent == `${playerOneName}'s turn`) {
-			playersContent = `${playerTwoName} win`
+		let players = $$.querySelector(".players")
+		let playersContent = players.textContent
+		if(playersContent === `${playerOneName}'s turn`) {
+			players.textContent = `${playerTwoName} win`
 			$$.querySelector(".p2-score").textContent++
 		} else {
-			playersContent = `${playerOneName} win`
+			players.textContent = `${playerOneName} win`
 			$$.querySelector(".p1-score").textContent++
 		}
 		checkScore(playerOneName, playerTwoName, $$.querySelector(".p1-score").textContent, $$.querySelector(".p2-score").textContent, ScoreLimit)
@@ -131,10 +134,10 @@
 					<div class="score"> 
 						<h3 class="scoreHeader"> Score </h3> 
 						<p class="scoreTable">
-							<span class="p1-name">${playerOneName}</span>
-							<span class="p1-score">0</span>  -  
-							<span class="p2-score">0</span> 
-							<span class="p2-name">${playerTwoName}</span>
+							<span>P: </span><span class="p1-name">${playerOneName}</span>
+							<span>S: </span><span class="p1-score">0</span>  -  
+							<span>P: </span><span class="p2-name">${playerTwoName}</span>
+							<span>S: </span><span class="p2-score">0</span> 
 						</p> 
 						<p class="topLimit">Top limit: ${ScoreLimit} </p>
 					</div>
@@ -184,16 +187,15 @@
 				displayController()
 			}, 1000)
 
-			setTimeout(() => {
-				$$.querySelector(".game-control").classList.add("game-control-come")
-			}, 1200)
-		} else if(e.target.id === "play") {
+			setTimeout(() => $$.querySelector(".game-control").classList.add("game-control-come"), 1200)
+		}
+		// Play Button in GAMECONTROLLER
+		else if(e.target.id === "play") {
 			let playerOneName = $$.querySelector("#playerOne").value
 			let playerTwoName = $$.querySelector("#playerTwo").value
 			let chooseFirstContent = $$.querySelector(".choose .span-click-effect").textContent
 			let scoreLimit = $$.querySelector(".maxScore").value
 			if(!playerOneName || !playerTwoName || !chooseFirstContent || !scoreLimit) {
-				console.log("Boşlukları doldurun")
 				$$.querySelector(".error").textContent = "ERROR : Please fill in all the blanks"
 				setTimeout(() => $$.querySelector(".error").textContent = "", 2000)
 			} else if(scoreLimit > 15) {
@@ -205,19 +207,14 @@
 					$$.querySelector(".game-control").remove()
 					displayGame(playerOneName, playerTwoName, chooseFirstContent, scoreLimit, player1Score, player2Score)
 				}, 1000)
-				setTimeout(() => {
-					$$.querySelector("#playGame").classList.add("game-effect")
-				}, 1200)
+				setTimeout(() => $$.querySelector("#playGame").classList.add("game-effect"), 1200)
 			}
 		}
-
 		// Silent is gold :)
 	})
 
 	// Load Listen BEGIN
-	$.addEventListener("load", () => {
-		$$.querySelector("#main .starting").classList.add("starting-effect")
-	})
+	$.addEventListener("load", () => $$.querySelector("#main .starting").classList.add("starting-effect"))
 	// Load Listen END
 
 	// Replay Event Handle BEGIN
